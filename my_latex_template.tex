@@ -1,0 +1,146 @@
+%!TEX TS-program = xelatex
+%\documentclass[12pt,letterpaper]{scrartcl}
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1.00in]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{amssymb, amsmath}
+\usepackage{footbib}
+\usepackage{adjustbox}
+\usepackage{comment}
+\usepackage{titling}
+%\renewcommand\thesection{}
+%\renewcommand\thesubsection{}
+
+%THIS COMMAND ALLOWS YOU TO LEAD WITH A QUOTE
+\newcommand{\introquote}[3]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - #2, \textit{#3}\end{flushright} }
+
+%THIS ALLOWS YOU TO USE SYSTEM FONTS LIKE MINION PRO
+\usepackage{fontspec}
+
+%IF YOU DON'T HAVE MINION PRO ON YOUR COMPUTER, JUST COMMENT OUT OR REPLACE THE FONT
+\defaultfontfeatures{Scale=MatchLowercase,Numbers={Lining,Proportional}}
+\setmainfont[Renderer=Basic,Ligatures=TeX]{Minion Pro} 
+\setmainfont[Mapping=tex-text]{MinionPro-Regular}
+\newfontfamily\titlefont[]{Helvetica Neue Thin}
+\setsansfont{Helvetica Neue Thin}
+	
+\usepackage{microtype}
+
+
+%author info
+\def\myaffiliation{Harvard University}
+\def\myauthor{Soumyajit Mazumder}
+\def\myemail{\small{\texttt{\href{mailto:smazumder@g.harvard.edu}{smazumder@g.harvard.edu}}}}
+\def\mytitle{\textbf{TITLE}\\ SUBTITLE}
+\def\mypdftitle{}
+\def\mykeywords{}
+
+%hyperlinks
+\usepackage[usenames,dvipsnames]{xcolor}                     
+\usepackage[xetex, 
+	colorlinks=true,
+	urlcolor=Mahogany, % external links
+        citecolor=RoyalBlue, % citations
+        filecolor=BlueViolet, % local files
+	plainpages=false,
+  	pdfpagelabels,
+  	bookmarksnumbered,
+  	pdftitle={\mypdftitle},
+  	pdfauthor={\myauthor},
+  	pdfkeywords={\mykeywords}
+  	]{hyperref}  
+	
+%track changes
+\usepackage[]{changes}%insert final into option to generate finalized version
+\definechangesauthor[name={Shom Mazumder}, color=orange]{SM}
+\setremarkmarkup{(#2)}
+
+%This is \added[remark={we need this}]{new} text.
+%This is \added[remark={has to be in it}]{new} text.
+%This is \deleted[remark=obsolete]{unnecessary}text.
+%This is \replaced{nice}{bad} text.
+		
+\begin{document}
+
+\title{\titlefont \bigskip \bigskip {{\mytitle}}}
+
+\author{\titlefont \myauthor\thanks{Graduate student, Department of Government, Harvard University} \\
+  \titlefont \myaffiliation \\ \myemail\thanks{This is where I thank my friends and colleagues.}}
+
+
+\date{{\titlefont \today}} 
+
+ 
+
+\pretitle{\begin{flushleft}\LARGE\sffamily}
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+\preauthor{\begin{flushleft}\sffamily}
+\postauthor{\par\end{flushleft}}
+\predate{\begin{flushleft}\large\scshape}
+\postdate{\par\end{flushleft}}
+\maketitle 
+
+%%%%%%%%%%%%ABSTRACT%%%%%%%%%%%%%%%
+\begin{abstract}
+
+\begin{center}
+[THIS IS THE ONLY PART OF THE PAPER YOU'RE GOING TO READ]
+\end{center}
+
+\end{abstract}
+
+\doublespacing
+\clearpage
+
+%%%%%%%%%%%%INTRODUCTION%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\begin{center}
+[THIS IS WHERE I MAKE YOU INTERESTED IN WHAT I HAVE TO SAY]
+\end{center}
+
+%%%%%%%%%%%%THEORY%%%%%%%%%%%%%%%
+
+\section{Theory}
+
+\begin{center}
+[THIS IS MY CLEVER THEORY]
+\end{center}
+
+%%%%%%%%%%%%RESEARCH DESIGN%%%%%%%%%%%%%%%
+
+\section{Research Design}
+
+\begin{center}
+[THIS IS MY INGENIOUS RESEARCH DESIGN]
+\end{center}
+
+%%%%%%%%%%%%CONCLUSION%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+\begin{center}
+[THIS IS MY PROFOUND CONCLUSION]
+\end{center}
+
+\clearpage
+
+%%%%%%%%%%%%%%THE BIBLIOGRAPHY%%%%%%%%%%%%%%%%
+\bibliographystyle{apsr2}
+\bibliography{}%INSERT BIBLIOGRAPHY.BIB HERE
+
+%%%%%%%%%%%%APPENDIX%%%%%%%%%%%%%%%
+
+\appendix
+
+\begin{center}
+[THIS IS THE APPENDIX]
+\end{center}
+\end{document}
