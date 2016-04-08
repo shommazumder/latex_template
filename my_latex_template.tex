@@ -14,9 +14,6 @@
 \usepackage{adjustbox}
 \usepackage{comment}
 \usepackage{titling}
-\usepackage{tikz}
-\usepackage{float}
-\usetikzlibrary{positioning}
 %\renewcommand\thesection{}
 %\renewcommand\thesubsection{}
 
@@ -63,7 +60,12 @@
   	pdfkeywords={\mykeywords}
   	]{hyperref}  
 	
-%track changes
+%PACKAGE TO MAKE DAGS	
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{positioning}
+	
+%PACKAGE TO TRACK CHANGES
 \usepackage[]{changes}%insert final into option to generate finalized version
 \definechangesauthor[name={Shom Mazumder}, color=orange]{SM}
 \setremarkmarkup{(#2)}
