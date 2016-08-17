@@ -18,6 +18,9 @@
 \usepackage{fontspec} % comment out if not using xelatex
 \usepackage{xunicode} % comment out if not using xelatex
 
+%% Use natbib/bibtex
+%\usepackage{natbib}
+
 %% Biblatex: You should be using biblatex + biber instead of e.g. natbib + bibtex
 %% Comment these lines out and replace them with your own bibliographic setup if not. 
 %% Chicago support packages come with texlive 2011; biber needs to be
@@ -43,18 +46,14 @@
   \mkbibemph{#1}\isdot} % for books
 \DeclareFieldFormat{booktitle}{\mkbibemph{#1}} % for edited volumes
 
+
 %% Name, Title, Affiliation, Contact. Change as needed.
 \def\myaffiliation{Harvard University}
 \def\myauthor{Shom Mazumder}
 \def\myemail{\small{\texttt{\href{mailto:smazumder@g.harvard.edu}{smazumder@g.harvard.edu}}}}
-\def\mytitle{Article Title: Article Subtitle}
+\def\mytitle{This Is My Title: This is My Subtitle}
 \def\mykeywords{Shom, Mazumder, Political, Economics}
 \def\mywebsite{\url{http://smazumder.me}}
-
-
-%Command to make an independent symbol
-\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
-\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
 
 %% Hyperlinks
 \usepackage[usenames,dvipsnames]{color}                     
@@ -76,6 +75,10 @@
 \usepackage{float}
 \usetikzlibrary{positioning}
 
+%Command to make an independent symbol
+%\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+%\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
 \begin{document} 
 
 %%% xelatex font choices
@@ -85,7 +88,7 @@
 \defaultfontfeatures{Scale=MatchLowercase,Numbers={Lining,Proportional}}
 \setmainfont[Renderer=Basic,Ligatures=TeX]{Minion Pro} 
 \setmainfont[Mapping=tex-text]{MinionPro-Regular}
-\newfontfamily\titlefont[]{Helvetica Neue Thin}
+%\newfontfamily\titlefont[]{Helvetica Neue Thin}
 %\setsansfont{Helvetica Neue Thin}
 \setsansfont{MinionPro-Regular}
 
@@ -95,14 +98,14 @@
 
 %% Layout and styling: this style is defined in defined in
 %% latex-custom-kjh/needs-memoir/, along with several alternatives.
-\chapterstyle{article-4-sans}  
+\chapterstyle{article-4}  
 
 \pagestyle{kjh}
 
-\title{\bigskip \bigskip {{ \mytitle}}}
+\title{\bigskip \bigskip {{ \mytitle\thanks{}}}}
 
-\author{\myauthor \\
-  \emph{\myaffiliation}% \thanks{I am grateful to } \\ \myemail}
+\author{\myauthor \thanks{Graduate Student, Department of Government, Harvard University, web: \mywebsite} \\
+  \emph{\myaffiliation} \\ \myemail}
 
 
 \date{Date last updated: \today \\ Date first created: \today} 
@@ -118,54 +121,35 @@
 %\thispagestyle{kjhgit}  
 
 \begin{abstract}
-
-This is my abstract.
+	
 
 \end{abstract}
+\newpage
 
-% \epigraphfontsize{\footnotesize}     
-% \setlength{\epigraphwidth}{4in} 
- %\setlength{\epigraphrule}{1pt}      
+ %\epigraphfontsize{\footnotesize}     
+ %\setlength{\epigraphwidth}{3in} 
+%\setlength{\epigraphrule}{1pt}      
  %\setlength{\beforeepigraphskip}{0pt}
  %\setlength{\afterepigraphskip}{0pt}
  
- %\epigraph{hello}{hello}         
-
+ %\epigraph{}{}         
+ 
 %%%%%%%%%%%%INTRODUCTION%%%%%%%%%%%%%%%
 
-\section{Introduction}
 
-\begin{center}
-[THIS IS WHERE I MAKE YOU INTERESTED IN WHAT I HAVE TO SAY]
-\end{center}
-
-%%%%%%%%%%%%THEORY%%%%%%%%%%%%%%%
-
-\section{Theory}
-
-\begin{center}
-[THIS IS MY CLEVER THEORY]
-\end{center}
-
-%%%%%%%%%%%%RESEARCH DESIGN%%%%%%%%%%%%%%%
-
-\section{Research Design}
-
-\begin{center}
-[THIS IS MY INGENIOUS RESEARCH DESIGN]
-\end{center}
-
-%%%%%%%%%%%%CONCLUSION%%%%%%%%%%%%%%%
-
-\section{Conclusion}
-
-\begin{center}
-[THIS IS MY PROFOUND CONCLUSION]
-\end{center}
+\section{Background}\label{sec:background}
 
 
+\section{Theory}\label{sec:theory}
+
+
+\section{Research Design}\label{sec:rd}
+
+
+\section{Conclusion}\label{sec:conclusion}
 
 %% Bibliography. If you are not using biblatex, comment out this line. 
+\newpage
 \printbibliography
 
 \end{document}
