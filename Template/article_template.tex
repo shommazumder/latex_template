@@ -48,6 +48,10 @@
   \mkbibemph{#1}\isdot} % for books
 \DeclareFieldFormat{booktitle}{\mkbibemph{#1}} % for edited volumes
 
+%%Independence symbol for math
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
 
 %% Name, Title, Affiliation, Contact. Change as needed.
 \def\myaffiliation{Harvard University}
@@ -106,7 +110,7 @@
 
 \title{\bigskip \bigskip {{ \mytitle\thanks{}}}}
 
-\author{\myauthor \thanks{Graduate Student, Department of Government, Harvard University, web: \mywebsite} \\
+\author{\myauthor \thanks{Ph.D. Candidate, Department of Government, Harvard University, web: \mywebsite} \\
   \emph{\myaffiliation} \\ \myemail}
 
 
